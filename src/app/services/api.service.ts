@@ -17,4 +17,8 @@ export class ApiService {
   addContact(contact: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/api/contacts`, contact); // Adjust endpoint if needed
   }
+  updateContact(id:number,contact:any):Observable<any>{
+    console.log("update function is called")
+    return this.http.put(`${this.apiUrl}/api/contacts/${id}`, contact);
+  }
 }
